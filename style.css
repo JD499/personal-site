@@ -1,0 +1,233 @@
+:root {
+	--font-family: "Berkeley Mono", monospace;
+	--line-height: 1.20rem;
+	--border-thickness: 2px;
+	--text-color: #000;
+	--text-color-alt: #666;
+	--background-color: #fff;
+	--background-color-alt: #eee;
+	--error-color: #d73a49;
+	--success-color: #28a745;
+	--font-weight-normal: 500;
+	--font-weight-medium: 600;
+	--font-weight-bold: 800;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: #fff;
+		--text-color-alt: #aaa;
+		--background-color: #000;
+		--background-color-alt: #111;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--background-color);
+	color: var(--text-color);
+	line-height: var(--line-height);
+	padding: var(--line-height) 2ch;
+	max-width: 80ch;
+	margin: 0 auto;
+}
+
+.header {
+	margin-bottom: var(--line-height);
+	border-bottom: var(--border-thickness) solid var(--text-color);
+	padding-bottom: var(--line-height);
+}
+
+.name {
+	font-size: 2rem;
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--line-height);
+}
+
+.contact-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1ch;
+}
+
+.contact-link {
+	display: flex;
+	align-items: center;
+	gap: 1ch;
+	padding: calc(var(--line-height) / 4) 1ch;
+	border: var(--border-thickness) solid var(--text-color);
+	text-decoration: none;
+}
+
+.contact-link:hover {
+	background: var(--background-color-alt);
+}
+
+.contact-icon {
+	font-weight: var(--font-weight-bold);
+	font-size: 1.2em;
+	min-width: 1.5em;
+	text-align: center;
+	color: var(--text-color-alt);
+}
+
+.contact-text {
+	color: var(--text-color);
+}
+
+a {
+	color: var(--text-color);
+}
+
+a:hover {
+	background: var(--background-color-alt);
+}
+
+.nav {
+	display: flex;
+	gap: 1ch;
+	margin: var(--line-height) 0;
+	flex-wrap: wrap;
+}
+
+.nav-button {
+	padding: calc(var(--line-height) / 2) 1ch;
+	border: var(--border-thickness) solid var(--text-color);
+	background: var(--background-color);
+	color: var(--text-color);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.nav-button:hover {
+	background: var(--background-color-alt);
+}
+
+.section {
+	margin: calc(var(--line-height) * 2) 0;
+}
+
+.section-title {
+	margin-bottom: var(--line-height);
+}
+
+.card {
+	border: var(--border-thickness) solid var(--text-color);
+	padding: var(--line-height);
+	margin-bottom: var(--line-height);
+}
+
+.project-card {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: var(--line-height);
+}
+
+.project-image {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border: var(--border-thickness) solid var(--text-color);
+}
+
+.project-links {
+	display: flex;
+	gap: 2ch;
+	margin-top: var(--line-height);
+}
+
+.project-tech {
+	margin: calc(var(--line-height) / 2) 0;
+	color: var(--text-color-alt);
+}
+
+.card-title {
+	font-weight: var(--font-weight-bold);
+	margin-bottom: calc(var(--line-height) / 2);
+}
+
+.card-subtitle {
+	color: var(--text-color-alt);
+	margin-bottom: calc(var(--line-height) / 2);
+}
+
+.skills-row {
+	margin-bottom: var(--line-height);
+}
+
+.skills-row:last-child {
+	margin-bottom: 0;
+}
+
+.skills-category {
+	margin-bottom: var(--line-height);
+}
+
+.skills-heading {
+	font-weight: var(--font-weight-bold);
+	margin-bottom: calc(var(--line-height) / 2);
+	color: var(--text-color);
+}
+
+.skills-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1ch;
+}
+
+.skill-tag {
+	border: var(--border-thickness) solid var(--text-color);
+	padding: 0.2rem 1ch;
+}
+
+.footer {
+	margin-top: calc(var(--line-height) * 2);
+	padding-top: var(--line-height);
+	border-top: var(--border-thickness) solid var(--text-color);
+	color: var(--text-color-alt);
+}
+
+.social-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 1ch;
+	color: var(--text-color);
+}
+
+@media screen and (max-width: 768px) {
+	.project-card {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding: var(--line-height) 1ch;
+	}
+
+	.contact {
+		flex-direction: column;
+	}
+
+	.nav {
+		flex-direction: column;
+	}
+
+	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.experience ul {
+	margin-left: 2ch;
+}
+
+.project-card ul {
+	margin: 1rem 0 1rem 2ch;
+}
